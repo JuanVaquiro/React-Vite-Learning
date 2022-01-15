@@ -1,32 +1,19 @@
-import { heroes } from './data/heroues';
+// operador condicional ternario 
+// manera corta de hacer una decision
+const activo = true;
 
-// El método find() devuelve el valor del primer elemento 
-// del array que cumple la función de prueba proporcionada.
+let mensaje = '';
 
-const getHeroeById3 = (id) => {
- return heroes.find(element => element.id === 2);    
+if ( !activo ) {
+     mensaje = 'activo';
+} else {
+    mensaje = 'inantivo'
 };
 
-const getHeroeById2 = (id) => {
-    return heroes.find( ( heroe ) => {
-        if( heroe.id === id ){
-            return true;
-        } else {
-            return false
-        }
-    } );    
-};
+const mensaje1 = ( activo ) ? 'Activo' : 'Inactivo';
 
-const getHeroeById = (id) => {
-    return heroes.find( ( heroe ) => heroe.id === id);    
-   };
-     
+const mensaje3 = activo && 'Actico';
 
-console.log(getHeroeById(2)); 
-console.log(getHeroeById3(2));
-
-const getHeroesByOwner = ( owner ) => {
-    return heroes.filter( ( prd ) => prd.owner === owner);
-};
-
-console.log(getHeroesByOwner('DC'));
+console.log( mensaje );
+console.log( mensaje1 );
+console.log( mensaje3 );
