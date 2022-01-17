@@ -1,5 +1,6 @@
 // Funcional Component 
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 // imr
 
 const PrimeraApp = ( { saludo } ) => {
@@ -11,5 +12,9 @@ const PrimeraApp = ( { saludo } ) => {
     </Fragment>
   );
 };
+
+PrimeraApp.propTypes = {
+  saludo: PropTypes.string.isRequired
+}
 
 export default PrimeraApp;  

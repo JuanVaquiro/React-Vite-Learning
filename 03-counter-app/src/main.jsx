@@ -1,12 +1,16 @@
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import PrimeraApp from './App';
 import './main.css';
 
 
 
-const divRoot = document.querySelector('#root');
-
-ReactDOM.render( <PrimeraApp saludo='hola, soy juan' />, divRoot );
+ReactDOM.render(
+  <React.StrictMode>
+    <PrimeraApp saludo='hola, juan' />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
 
 
 
@@ -17,5 +21,18 @@ ReactDOM.render( <PrimeraApp saludo='hola, soy juan' />, divRoot );
 //   <BrowserRouter>
 //     <App />
 //   </BrowserRouter>,
+//   document.getElementById('root')
+// )
+
+
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import './index.css'
+// import App from './App'
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
 //   document.getElementById('root')
 // )
