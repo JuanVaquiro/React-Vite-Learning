@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const CounterApp = ( { value = 3 } ) => {
 
-    // useState retorna una arreglo con dos valores
+    // hook funcion useState q retorna una arreglo con dos valores
     const [ counter, setCounter ] = useState( value );
 
 
