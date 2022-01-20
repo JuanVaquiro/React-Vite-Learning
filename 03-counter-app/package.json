@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "yarn run jest -env=jsdom"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
@@ -14,10 +14,78 @@
     "react-router-dom": "6.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/plugin-syntax-jsx": "^7.16.7",
+    "@babel/preset-env": "^7.16.10",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/dom": "^8.11.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "babel-eslint": "^10.0.0",
+    "babel-jest": "^27.4.6",
+    "babel-preset-react-app": "^10.0.1",
+    "eslint": "^7.5.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
+    "jest-circus": "^27.4.6",
+    "jest-scss-transform": "^1.0.1",
+    "jest-watch-typeahead": "^1.0.0",
     "vite": "^2.7.2"
+  },
+  "eslintConfig": {
+       "extends": "react-app"
+     },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest/mocks/jest.setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.scss$": "jest-scss-transform",
+      "^.+\\.css$": "<rootDir>/jest/mocks/cssMock.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "resetMocks": true
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "react-app"
+        ]
+      }
+    }
   }
 }
