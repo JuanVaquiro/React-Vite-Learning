@@ -20,16 +20,14 @@ const CounterApp = ( { value = 3 } ) => {
         setCounter( (c) => c - 1)
     };
 
-    const defValue = () => {
-         setCounter(value)                                                                                                                                                                                                                                                             
-    };
+    const defValue = () => setCounter(value)                                                                                                                                                                                                                                                             
     
     
     return (    
         <Fragment>  
             <h1>CounterApp</h1>
             <h2> { counter }</h2>                           
-            <button onClick={  handleAdd } >+1</button>
+            <button onClick={ handleAdd } >+1</button>
             <button onClick={ defValue }>Reset</button>                                                                                
             <button onClick={ handleMeno }>-1</button>
             {/* <button onClick={ (e) => { handleAdd(e) } }>+1</button> */}

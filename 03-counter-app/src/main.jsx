@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CounterApp from './CounterApp';
+import PrimeraApp from './App'
 import './main.css';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    {/*<PrimeraApp saludo='hola, juan' /> */}
-    <CounterApp value={3} />
+    <PrimeraApp saludo='hola, juan' /> 
+    <CounterApp value={ 0 } />
   </React.StrictMode>,
   document.getElementById('root')
 )
