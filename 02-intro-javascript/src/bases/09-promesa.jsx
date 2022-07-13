@@ -26,8 +26,8 @@ const getHeroeByIdAsync = ( id ) => {
             } else {
                 reject( 'error, no se encuentra el heroe' );
             }    
-            }, 2000 )
-        });
+         }, 2000 )
+    });
 };
 
 getHeroeByIdAsync(4)
@@ -37,3 +37,32 @@ getHeroeByIdAsync(4)
 .catch(
     error => console.warn( error )
 )
+
+
+let promise = new Promise(function(resolve, reject) {
+    // la función se ejecuta automáticamente cuando se construye la promesa
+  
+    // después de 1 segundo, indica que la tarea está hecha con el resultado "hecho"
+    setTimeout(() => resolve("hecho"), 1000);
+});
+
+promise.then()
+
+//   Promise {<pending>}
+//   [[Prototype]]: Promise
+//   [[PromiseState]]: "fulfilled"
+//   [[PromiseResult]]: "echo"
+  
+
+let promiseReject = new Promise(function(resolve, reject) {
+  // después de 1 segundo, indica que la tarea ha finalizado con un error
+  setTimeout(() => reject(new Error("¡Vaya!")), 1000);
+});
+
+promiseReject.catch()
+
+/* Promise {<pending>}
+ [[Prototype]]: Promise
+ [[PromiseState]]: "rejected"
+ [[PromiseResult]]: Error: ¡Vaya! at <anonymous>:3:27
+*/
