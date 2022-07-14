@@ -1,0 +1,17 @@
+
+describe('Pruebas en demo', () => {
+
+    test("Esta preuba no de fallar", () => {
+      // 1.Inicializacion
+      const message1 = "hola mundo";
+    
+      // 2. Estimulo
+      const message2 = message1.trim();
+    
+      // 3. Observar el comportamiento
+      expect(message1).toBe(message2);
+    
+    });
+    
+});
+    
