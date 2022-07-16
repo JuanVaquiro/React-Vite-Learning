@@ -3,7 +3,7 @@ import getHeroeByIdAsyc from "../../src/base-pruebas/09-promesas";
 describe('Test in file 09-promesa', () => {
     
 
-    test('getHeroeByIdAsyc debe de regresa un heroe pasado la promesa', (done) => {
+    test('getHeroeByIdAsyc debe de regresa un heroe pasado la promesa', ( done ) => {
         
         const id = 1;
 
@@ -14,13 +14,11 @@ describe('Test in file 09-promesa', () => {
         }
 
         getHeroeByIdAsyc( id )
-            .then( hero => {
 
-                expect( hero ).toEqual( testObject );
-                
-                done()
-            }
-        )
+        .then( hero => {
+            expect( hero ).toEqual( testObject );
+            done()   
+        })
     });
 
     
@@ -28,13 +26,15 @@ describe('Test in file 09-promesa', () => {
         
         const id = 101;
         getHeroeByIdAsyc( id )
-            .catch( error => {
-                
-                expect( error ).toBe( ` No se pudo encontra el heroe con el ID: ${id}` );
-                
-                done()
-            }      
-        )
 
+        //No esta demas, evaluar si el ID Existe. ESTO NO DEBIERA DE SUCEDER
+        .then( hero => {
+            expect( hero ).toBeFalsy()
+            done()
+        })
+        .catch( error => {
+            expect( error ).toBe( ` No se pudo encontra el heroe con el ID: ${ id }` );
+            done()
+        })
     });
 });

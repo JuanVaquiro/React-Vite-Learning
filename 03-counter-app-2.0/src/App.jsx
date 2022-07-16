@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PropTypes from 'prop-types';
 
 const newMessage = {
@@ -11,19 +10,16 @@ const FntSuma = (b, c) => {
   return a;
 };
 
-const App = ({ title, subTitle }) => {
-  const [count, setCount] = useState(0);
+const App = ({ title, subTitle, name }) => {
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>{title}</h1>
-        <p>{subTitle }</p>
-        <button type="button" onClick={() => setCount((count) => count + 1)}>
-          count is: {count}
-        </button>   
-        <br/>
+        <h2>{name}</h2>
+        <p>{subTitle }</p>    
         <span>{FntSuma(2, 3)}</span> 
+        <br/>
         <br/>
         <code>{JSON.stringify(newMessage)}</code>
       </header>
@@ -37,7 +33,9 @@ App.propTypes = {
 }
 
 App.defaultProps = {
-  title: 'quihubo'
+  title: 'quihubo',
+  subTitle: 2,
+  name: 'JUAN D'
 }
 
 
