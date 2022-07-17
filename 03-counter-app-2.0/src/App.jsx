@@ -33,7 +33,7 @@ App.propTypes = {
 }
 
 App.defaultProps = {
-  title: 'quihubo',
+  // title: 'quihubo',
   subTitle: 2,
   name: 'JUAN D'
 }
