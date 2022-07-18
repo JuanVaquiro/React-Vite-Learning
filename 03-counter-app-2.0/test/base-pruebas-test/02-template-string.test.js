@@ -6,6 +6,7 @@ describe('Pruebas en 02-tempalte-string', () => {
         const name = 'juan'
         const message = getSaludo( name ) 
 
+        // toBe Se asegura que sea el elemento sea del mismo tipo, mismo contenido, identico
         expect( message ).toBe( `hola ${ name }` );
     });
 }); 
