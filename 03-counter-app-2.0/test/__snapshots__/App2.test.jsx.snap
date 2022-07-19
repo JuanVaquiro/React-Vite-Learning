@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <App2 /> debe de hacer match con el Snapshot  1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <header
+      class="App-header"
+    >
+      <h1
+        data-testid="test-title"
+      >
+        Hola, soy Juan
+      </h1>
+      <h2>
+        JUAN D
+      </h2>
+      <p>
+        este es el subtitulo
+      </p>
+      <p>
+        este es el subtitulo
+      </p>
+      <span>
+        6
+      </span>
+      <br />
+      <br />
+      <code>
+        {"message":"Hola Padre este es el msm;","conter":"Saludo Dirigido"}
+      </code>
+    </header>
+  </div>
+</div>
+`;
