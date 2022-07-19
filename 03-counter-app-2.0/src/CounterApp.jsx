@@ -18,11 +18,11 @@ const CounterApp = ({ value }) => {
   return (
     <div className="container">
       <h1>CounterApp</h1>
-      <h2>{counter}</h2>
+      <h2 data-testid='counter' >{counter}</h2>
       <div>
         <button onClick={Incremet}>+1</button>
         <button onClick={Decrement}>-1</button>
-        <button onClick={Reset}>Reset</button>
+        <button aria-label='btn-reset' onClick={Reset}>Reset</button>
       </div>
     </div>
   );
