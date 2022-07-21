@@ -1,31 +1,45 @@
 import { useState } from 'react'
 import AddCategory from './components/AddCategory'
+import GifGrid from './components/GifGrid'
 
 
 // UWq2H92uOZoNgd5sj1D011B5dHLW1xoS KEY APP GIF
 
+
+/* 
+*  añadir la nueva categoría poniéndola al inicio de la lista 
+*   y en caso de que ya existiera, elimina
+*
+*  categorías actuales: [ perro, gato, pez, lobo ]
+*  categoría añadida: pez
+*  categorías actualizadas: [ pez, perro, gato, lobo ]   
+*    
+*  setCategories([ newCategory, ...categories.filter( val => val !== newCategory ) ]); 
+*/
+
+
 const GitExpertApp = () => {
-  const [categories, setCategories] = useState(['Naruto', 'One Piece'])
+  const [categories, setCategories] = useState([])
   
-  const onAddCategory = () => { 
+  const onAddCategory = (capCategory) => {
     // seCategories( ([ ...categories, 'Pokemon' ]) );
-    setCategories( addCat => [ 'Pokemon', ...addCat ] )
-   } 
+    // setCategories( addCat => [ capCategory, ...addCat ] )
+    const lowCaseCategory = capCategory.toLowerCase();
+    if (categories.includes(lowCaseCategory)) return;
+    setCategories([lowCaseCategory, ...categories]);
+  }; 
 
   return (
     <div className="App">
       <h1>GitExpertApp</h1>
 
-      {/* Input */}
-      <AddCategory onSetCategory={ setCategories } /> 
+      <AddCategory
+        onNewCategory={(event) => onAddCategory(event)}
+      />
 
-      {/*  filtro listado de Gif */}
-    
-      <ol>
-        {categories.map((categories) => {
-          return <li key={categories}> {categories}</li>;
-        })}
-      </ol>
+      {categories.map(( category ) => (
+        <GifGrid key={ category } category={ category } />
+      ))}
     </div>
   );
 }

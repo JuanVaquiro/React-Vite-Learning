@@ -10,7 +10,7 @@ function formatName({ firstName, lastName }) {
   };
 
 
-const AddCategory = ( { onSetCategory } ) => {
+const AddCategory = ( { onNewCategory } ) => {
 
     const [inputValue, setInputValue] = useState('')
     
@@ -29,12 +29,15 @@ const AddCategory = ( { onSetCategory } ) => {
         // console.log(event)
         event.preventDefault() // preventDefault, previene el comportamiento del refresh de la página
         // console.log(inputValue)
-
-        if ( inputValue.trim().length < 1 ) return // prueba para no recibie elementos vacios
-         
-        onSetCategory( ( AddCategory ) => [ inputValue, ...AddCategory ])
-        setInputValue('')
         
+        const newInputValue = inputValue.trim()
+        if ( newInputValue.length < 1 ) return // prueba para no recibie elementos vacios 
+         
+        // onSetCategory( ( AddCategory ) => [ inputValue, ...AddCategory ])
+
+        onNewCategory( newInputValue )
+        setInputValue('')
+
      }
 
     // el evento que es es un argumento que se lo paso a una Funcion 
@@ -51,7 +54,7 @@ const AddCategory = ( { onSetCategory } ) => {
           onChange={onInputChange}
         />
       </form>
-      <h1>Hello, {formatName(user)}!</h1>
+      {/*<h3>Hello, {formatName(user)}!</h3>*/}
     </div>
   );
 }
