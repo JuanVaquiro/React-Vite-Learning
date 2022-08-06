@@ -44,3 +44,30 @@ body {
   width: 20%;
 
 }
+  
+.card-gird{
+  display: grid;
+  grid-template-rows: 418px 418px 418px;
+  grid-template-columns: 418px 418px 418px; 
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.item-card{
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 14px;
+}
+.item-card p{
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  
+}
+.item-card img{
+  width: 100%;
+  height: auto;
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px; 
+}
