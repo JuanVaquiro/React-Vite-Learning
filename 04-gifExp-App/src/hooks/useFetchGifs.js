@@ -8,14 +8,16 @@ const useFetchGifs = ( category ) => {
 
   const getImages = async () => {
     const newImages = await getGifs( category );
+    console.log(newImages)
     setimages( newImages );
     setisLoanding( false )
   };
 
   useEffect(() => {
     getImages();
-  });
+  },[]);
 
+  console.log(images)
   return {
     images,
     isLoanding

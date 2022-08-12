@@ -4,7 +4,7 @@ import GitItem from "./GitItem";
 const GifGrid = ({ category }) => {
 
     const { images, isLoanding } = useFetchGifs( category )
-    // console.log({ images, isLoanding })
+    console.log({ images, isLoanding })
 
   return (
     <div>
@@ -21,7 +21,7 @@ const GifGrid = ({ category }) => {
               { ...img } //esparciendo todos los props al fntComponent
             />
           ))
-        }
+        } 
       </div>
     </div>
   );
