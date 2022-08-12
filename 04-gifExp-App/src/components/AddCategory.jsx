@@ -1,14 +1,5 @@
 import { useState } from "react";
 
-function formatName({ firstName, lastName }) {
-  return firstName + " " + lastName;
-}
-
-const user = {
-  firstName: "David",
-  lastName: "Vaquiro",
-};
-
 const AddCategory = ({ onNewCategory }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -51,7 +42,6 @@ const AddCategory = ({ onNewCategory }) => {
           onChange={onInputChange}
         />
       </form>
-      {/*<h3>Hello, {formatName(user)}!</h3>*/}
     </div>
   );
 };
