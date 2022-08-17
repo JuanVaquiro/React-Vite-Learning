@@ -1,5 +1,3 @@
-
-
 const API_KEY = 'UWq2H92uOZoNgd5sj1D011B5dHLW1xoS'
 
 const getGif = async (message) => {
@@ -7,7 +5,6 @@ const getGif = async (message) => {
     const resp = await fetch(urlGif)
     // caonsole.log(resp)
     const { data } = await resp.json()
-        // console.log(data)
     const gifs = data.map( img =>({
         title: img.title,
         url: img.images.original.url
@@ -15,7 +12,7 @@ const getGif = async (message) => {
 
     console.log('ret', gifs);
     return gifs
-    
+        
     // setGifImg(gifs)
 }
 
