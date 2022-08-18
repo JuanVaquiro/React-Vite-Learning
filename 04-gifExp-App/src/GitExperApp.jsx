@@ -5,7 +5,6 @@ const GitExpertApp = () => {
   const [categories, setCategories] = useState([])
   
   const onAddCategory = (capCategory) => {
-    // seCategories( [ ...categories, 'Pokemon' ] );
     const lowCaseCategory = capCategory.toLowerCase();
     if (categories.includes(lowCaseCategory)) return;
     setCategories([lowCaseCategory, ...categories]);
