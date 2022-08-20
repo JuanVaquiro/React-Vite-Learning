@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { AddCategory, GifGrid  } from './components'
 
 const GitExpertApp = () => {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState(['gif'])
   
   const onAddCategory = (capCategory) => {
     const lowCaseCategory = capCategory.toLowerCase();

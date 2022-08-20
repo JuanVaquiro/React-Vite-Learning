@@ -14,6 +14,7 @@ const App = () => {
         const gif = await getGif(message)
         setcatFact(messageCat)
         console.log(messageCat, 'TEXT');
+        console.log(gif);
         setGifImg(gif)
     }
           
@@ -21,21 +22,26 @@ const App = () => {
         getData()
     },[])
 
-    return(
-        <div>
-            <div className="container" >
-            {   
-                gifImg.map( gif => (
-                  <img className="gifImg" key={gif.title} src={gif.url} alt={gif.title} />
-                ))
-            }
+    return (
+      <div>
+        <div className="container">
+          {gifImg.map((gif) => (
+            <img
+              className="gifImg"
+              key={gif.title}
+              src={gif.url}
+              alt={gif.title}
+            />
+          ))}
+          <div>
             <h2>{catFact}</h2>
-            </div>
             <button className="btn" onClick={getApiCat}>
-                Get Fact
+              Get Fact
             </button>
+          </div>
         </div>
-    )
+      </div>
+    );
 }
 
 export default App

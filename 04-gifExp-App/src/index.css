@@ -72,3 +72,22 @@ body {
   border-top-right-radius: 14px;
   border-top-left-radius: 14px; 
 }
+
+.container{
+  display: flex;
+  gap: 10px;
+}
+.gifImg{
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+}
+.btn{
+  width: 140px;
+  height: 40px;
+  background-color: rgb(127, 144, 255);
+  color: black;
+  font-weight: 700;
+  border-radius: 24px;
+  border-color: azure;
+}
