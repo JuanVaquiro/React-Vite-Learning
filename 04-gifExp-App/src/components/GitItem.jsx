@@ -1,5 +1,6 @@
+import PropTypes  from "prop-types"
 
-const GitItem = ({ title, url, id}) => {
+const GitItem = ({ title, url, id }) => {
    
     // console.log({title, url, id})
     return (
@@ -8,6 +9,11 @@ const GitItem = ({ title, url, id}) => {
         <p>{ title }</p>
     </div>
   )
+}
+
+GitItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 }
 
 export default GitItem
