@@ -13,10 +13,9 @@ const AddCategory = ({ onNewCategory }) => {
     setInputValue(target.value);
   };
 
-  const onSumbit = (event) => {
+  const onSumbit = ( event ) => {
     // console.log(event)
     event.preventDefault(); // preventDefault, previene el comportamiento del refresh de la página
-    // console.log(inputValue)
     const newInputValue = inputValue.trim();
     if (newInputValue.length <= 2) return; // prueba para no recibie elementos vacios
     onNewCategory(newInputValue);
@@ -25,7 +24,7 @@ const AddCategory = ({ onNewCategory }) => {
 
   return (
     <div className="cotainer-input">
-      <form onSubmit={onSumbit}>
+      <form onSubmit={onSumbit} aria-label="form" >
         <input
           className="input-searchGif"
           type="text"
