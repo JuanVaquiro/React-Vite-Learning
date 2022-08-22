@@ -1,15 +1,14 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const AddCategory = ({ onNewCategory }) => {
   const [inputValue, setInputValue] = useState("");
 
   const onInputChange = ({ target }) => {
-    /*   destructuracion de objetos
-            ({ target: { value } }) => setInputValue(value);
-        *   dentro del evento hay una props target.value
-            para cambiar el nuevo valor del input
-        *   console.log( event.target.value )  
-        */
+    /* destructuracion de objetos
+      ({ target: { value } }) => setInputValue(value);
+      dentro del evento hay una props target.value
+      para cambiar el nuevo valor del input */
     console.log(target.value);
     setInputValue(target.value);
   };
@@ -18,18 +17,11 @@ const AddCategory = ({ onNewCategory }) => {
     // console.log(event)
     event.preventDefault(); // preventDefault, previene el comportamiento del refresh de la página
     // console.log(inputValue)
-
     const newInputValue = inputValue.trim();
     if (newInputValue.length <= 2) return; // prueba para no recibie elementos vacios
-
-    // onSetCategory( ( AddCategory ) => [ inputValue, ...AddCategory ])
-
     onNewCategory(newInputValue);
     setInputValue("");
   };
-
-  // el evento que es es un argumento que se lo paso a una Funcion
-  // (event) => onSumbit( event )
 
   return (
     <div className="cotainer-input">
@@ -44,6 +36,10 @@ const AddCategory = ({ onNewCategory }) => {
       </form>
     </div>
   );
+};
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired,
 };
 
 export default AddCategory;
