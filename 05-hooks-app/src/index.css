@@ -1,0 +1,40 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #4b4949cf;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input{
+  margin: 5px;
+  width: 400px;
+  height: 18px;
+  border-radius: 20px;
+  padding: 5px;
+  color: white;
+}
+input::placeholder{
+  padding-left: 10px;
+  color: white;
+  opacity: 0.6;
+}
