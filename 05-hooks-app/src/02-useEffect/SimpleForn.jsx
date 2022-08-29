@@ -7,6 +7,7 @@ const SimpleForn = () => {
   });
 
   const { username, email } = formData;
+
   const onInputChange = ({ target }) => {
     const { name, value } = target;
     setFormData({
@@ -16,13 +17,16 @@ const SimpleForn = () => {
   };
 
   useEffect(() => {
-    first
-  
-    return () => {
-      second
-    }
-  }, [third])
-  
+    console.log("useEffect call");
+  }, []);
+
+  useEffect(() => {
+    console.log("fromData call");
+  }, [formData]);
+
+  useEffect(() => {
+    console.log("email call");
+  }, [email]);
 
   return (
     <div>

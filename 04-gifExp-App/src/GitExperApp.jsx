@@ -13,12 +13,10 @@ const GitExpertApp = () => {
   return (
     <div className="App">
       <h1>GitExpertApp</h1>
-
       <AddCategory
         onNewCategory={(event) => onAddCategory(event)}
         // onNewCategory = { onAddCategory }
       />
-
       {categories.map(( category ) => (
         <GifGrid key={ category } category={ category } />
       ))}

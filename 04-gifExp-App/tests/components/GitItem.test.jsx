@@ -17,7 +17,6 @@ describe('test en el compoenntes <GitItem />', () => {
     test('debe de mostrar la imagen con el URL y el ALT indicado', () => {
         
         render(<GitItem  title={ title } url={ url } />);
-        // screen.debug();  mostrar lo que imprime el compoenente
         // expect( screen.getByRole('img').src ).toBe( url )
 
         const { src, alt } = screen.getByRole('img')
@@ -31,4 +30,4 @@ describe('test en el compoenntes <GitItem />', () => {
         expect( screen.getByText( title ) ).toBeTruthy();
     });
 
- });
+});
