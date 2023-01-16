@@ -9,7 +9,7 @@ const peticion = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }
 //     })
 // })
 // .catch( console.warn);
-
+ 
 
 // json(): es un metodo de la respuesta. retorna
 // una promesa que devuele culquier cosa 

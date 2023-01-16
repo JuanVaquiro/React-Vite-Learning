@@ -9,8 +9,8 @@ const CounterCustom = () => {
       <h1>Counter With hook: {counter} </h1>
       <hr />
       <div style={{ display: "flex", gap: "10px" }}>
-        <button onClick={() => increment(2)}> +1 </button>
-        <button onClick={() => decrement(2)}> -1 </button>
+        <button onClick={() => increment(1)}> +1 </button>
+        <button onClick={() => decrement(1)}> -1 </button>
         <button onClick={reset}> Reset </button>
       </div>
     </div>

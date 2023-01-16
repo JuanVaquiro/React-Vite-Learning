@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Message from "./Message";
 
-const SimpleForn = () => {
+const CustomFormHook = () => {
   const [formData, setFormData] = useState({
     username: "juan",
     email: "user@gmail.ocm",
@@ -31,7 +31,7 @@ const SimpleForn = () => {
 
   return (
     <div>
-      <h1>Form Single</h1>
+      <h1>Form Custom hook</h1>
       <hr />
       <input
         type="text"
@@ -56,4 +56,4 @@ const SimpleForn = () => {
   );
 };
 
-export default SimpleForn;
+export default CustomFormHook;
