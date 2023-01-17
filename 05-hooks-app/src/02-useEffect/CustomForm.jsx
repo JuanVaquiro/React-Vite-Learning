@@ -1,40 +1,19 @@
-import { useEffect, useState } from "react";
-import Message from "./Message";
+import { useForm } from "../hooks/useForm";
 
 const CustomFormHook = () => {
-  const [formData, setFormData] = useState({
-    username: "juan",
-    email: "user@gmail.ocm",
+  const { onInputChange, onResetForm, username, email, password } = useForm({
+    username: "",
+    email: "",
+    password: "",
   });
 
-  const { username, email } = formData;
-
-  const onInputChange = ({ target }) => {
-    const { name, value } = target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  // useEffect(() => {
-  //   console.log("useEffect call");
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log("fromData call");
-  // }, [formData]);
-
-  // useEffect(() => {
-  //   console.log("email call");
-  // }, [email]);
+  //  const { username, email, password } = formData
 
   return (
     <div>
-      <h1>Form Custom hook</h1>
-      <hr />
+      <h1>Form Custom hook </h1>
       <input
-        type="text"
+        type="text" 
         name="username"
         placeholder="Username"
         value={username}
@@ -47,11 +26,14 @@ const CustomFormHook = () => {
         value={email}
         onChange={onInputChange}
       />
-
-      {
-        (username === 'juan2') && <Message />
-      }
-
+      <input
+        type="password"
+        name="password"
+        placeholder="password"
+        value={password}
+        onChange={onInputChange}
+      />
+      <button onClick={onResetForm}>reset</button>
     </div>
   );
 };

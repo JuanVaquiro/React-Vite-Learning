@@ -4,16 +4,22 @@ const Message = () => {
   const [coords, setcoords] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    //callBack 
+    // listener 
     const onMouseMove = ({ x, y }) => {
-      //   const coords = { x, y };
       setcoords({ x, y });
     };
 
     window.addEventListener("mousemove", onMouseMove);
     
+    //Cleanup - limpieza 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
+
+    //arreglo de dependecias, condiciones por las cuales
+    //el useEffect se vuelva a disparar. arreglo vacio = se dispara una unica vez
+    //cuando el elemento se renderiza por primera vez
   }, []);
 
   return (
