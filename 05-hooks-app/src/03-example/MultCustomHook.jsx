@@ -1,6 +1,6 @@
-import useCounter from "../hooks/useCounter";
-import useFetch from "../hooks/useFethc";
-import FilterName from "./filterName";
+import { useCounter, useFetch } from '../hooks'
+import { LoadingQoute, Character } from './components'
+import FilterName from "./filterName"
 
 const MultCustomHook = () => {
   const { counter, increment, decrement } = useCounter(1);
@@ -18,16 +18,20 @@ const MultCustomHook = () => {
     decrement(1);
   };
 
-  const data = Object.values({ results });
+  const data = results
   console.log(data);
 
-  const onAddName = (capName) =>{
+  // const data1 = Object.values({ results });
+  // console.log( data1);
+
+  const onAddName = (capName) => {
     const lowCaseName = capName.toLowerCase()
     if (data.includes(lowCaseName)) return {
-      
+
     }
   }
 
+  // si la data tiene un valor, entonces: toma la data en la posicion 0
   // const { name, image, species, status } = !!data && data[0]
 
   // const character = data.map(function (data) {
@@ -38,30 +42,29 @@ const MultCustomHook = () => {
     <div className="main-container">
       <h1>Ricky and Morty</h1>
 
-      <FilterName 
+      <FilterName
         onNewValue={onAddName}
       />
-      {isLoading ? (
-        <div>Cargando...</div>
-      ) : (
-        <blockquote>
-          <div className="cart-character">
-            <img src={data[0].image} alt="" />
-            <span>name: {data[0].name}</span>
-            <span>species: {data[0].species}</span>
-            <span>status: {data[0].status}</span>
-          </div>
-        </blockquote>
-      )}
-
+      {
+        isLoading
+          ? <LoadingQoute />
+          : (
+            <Character
+              name={data.name}
+              species={data.species}
+              image={data.image}
+              status={data.status}
+            />
+          )
+      }
       <div>
-      <button disabled={isLoading} onClick={handleClikDow}>
-      preview character
-      </button>
-      {' '}
-      <button disabled={isLoading} onClick={handleClik}>
-        next character
-      </button>
+        <button disabled={isLoading} onClick={handleClikDow}>
+          preview character
+        </button>
+        {' '}
+        <button disabled={isLoading} onClick={handleClik}>
+          next character
+        </button>
       </div>
     </div>
   );
