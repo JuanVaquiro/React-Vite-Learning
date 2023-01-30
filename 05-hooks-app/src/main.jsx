@@ -4,7 +4,5 @@ import HooksApp from './hooksApp'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <HooksApp />
-  </React.StrictMode>
 )
